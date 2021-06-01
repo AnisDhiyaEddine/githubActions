@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll --detectOpenHandles",
-    "CI": "jest"
+    "Pre-CI": "jest"
   },
   "repository": {
     "type": "git",
