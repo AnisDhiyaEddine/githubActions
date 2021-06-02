@@ -1,5 +1,5 @@
 {
-  "name": "githubActions",
+  "name": "api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -26,6 +26,9 @@
   },
   "jest": {
     "verbose": true,
+    "setupFiles": [
+      "./test/setEnvVars.js"
+    ],
     "setupFilesAfterEnv": [
       "./test/helpers/setup.js"
     ],

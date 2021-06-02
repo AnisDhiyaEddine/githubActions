@@ -22,6 +22,12 @@ jobs:
       - name: install
         run: npm install
       - name: postinstall 
-        run: cd sub-project && npm install
+        run: cd api && npm install
+      - name: server-1-install
+        run: cd server-1 && npm install
+      - name: server-2-install
+        run: cd serever-2 && npm install 
+      - name: launch-servers
+        run: node server-1/index.js && node server-2/index.js
       - name: test
-        run: cd sub-project && npm run CI
+        run: cd api && npm run CI

@@ -5,8 +5,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "CI": "cd sub-project && npm CI"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/AnisDhiyaEddine/githubActions/issues"
   },
-  "homepage": "https://github.com/AnisDhiyaEddine/githubActions#readme"
+  "homepage": "https://github.com/AnisDhiyaEddine/githubActions#readme",
+  "type": "module"
 }
