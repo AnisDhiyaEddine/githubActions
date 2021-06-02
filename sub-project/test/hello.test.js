@@ -1,3 +1,5 @@
-test('youpiii ', () => {
-    console.log('let"s test the workflow');
+test('hello hello', () => {
+    console.log('-----------------------');
+    console.log(process.env.ENV_VARIABLE);
+    console.log('-----------------------');
 })
