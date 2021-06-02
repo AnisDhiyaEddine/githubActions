@@ -28,6 +28,6 @@ jobs:
       - name: server-2-install
         run: cd server-2 && npm install 
       - name: launch-servers
-        run: node server-1/index.js && node server-2/index.js
+        run: $(npm bin)/concurrently --kill-others "node server-1/index.js" "node server-2/index.js"
       - name: test
         run: cd api && npm run CI
