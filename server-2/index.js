@@ -9,6 +9,8 @@ app.listen(3002,()=>{
 })
 
 process.on('SIGTERM',() => {
-    console.log("gracefully shut down");
-    process.exit(0);
+    console.log('Closing http server.');
+    server.close(() => {
+      process.exit(0);    
+    });
 })
