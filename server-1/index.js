@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-console.log(process.env.environment)
+console.log(process.env.NODE_ENV)
 app.get("/",(req,res)=>{
     console.log("youpiii t3ref ki ydir haha");
     res.send("server-1");
