@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
-        run: npm install && npm postinstall
+        run: npm install
       - name: postinstall 
         run: cd sub-project && npm install
       - name: test
