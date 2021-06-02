@@ -7,3 +7,8 @@ app.get("/",(req,res)=>{
 app.listen(3002,()=>{
     console.log("app is listening on port 3002");
 })
+
+process.on('SIGTERM',() => {
+    console.log("gracefully shut down");
+    process.exit(0);
+})
