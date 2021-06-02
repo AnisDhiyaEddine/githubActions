@@ -1,0 +1,49 @@
+{
+  "name": "githubActions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --detectOpenHandles",
+    "CI": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnisDhiyaEddine/githubActions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnisDhiyaEddine/githubActions/issues"
+  },
+  "homepage": "https://github.com/AnisDhiyaEddine/githubActions#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "jest": "^27.0.3",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "./test/helpers/setup.js"
+    ],
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.mjs$": "babel-jest"
+    }
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.4"
+  }
+}

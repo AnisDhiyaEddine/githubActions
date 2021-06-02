@@ -1,4 +1,4 @@
-name: Pre-CI
+name: CI
 on:
   push:
     branches:
@@ -6,11 +6,11 @@ on:
   pull_request: {}
 
 jobs:
-  build_test_release:
+  test:
     strategy:
       matrix:
-        node-version: [12, 14, 16]
-        os: ['ubuntu-latest', 'windows-latest']
+        node-version: [16]
+        os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -20,6 +20,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
-        run: npm install
+        run: npm install && npm postinstall
       - name: test
-        run: npm run Pre-CI
+        run: npm run CI
