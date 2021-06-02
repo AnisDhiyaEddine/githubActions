@@ -24,4 +24,4 @@ jobs:
       - name: postinstall 
         run: cd sub-project && npm install
       - name: test
-        run: npm run CI
+        run: cd sub-project && npm run CI
