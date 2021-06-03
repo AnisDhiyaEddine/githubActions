@@ -13,21 +13,17 @@ jobs:
         os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
     env: 
-      SERVER_1: ${{ secrets.SERVER_1 }}
+      Hello: ${{ secrets.Hello }}
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install
-        run: npm install
-      - name: postinstall 
-        run: cd api && npm install
-      - name: server-1-install
-        run: cd server-1 && npm install
-      - name: server-2-install
-        run: cd server-2 && npm install 
-      - name: launch-servers_test
-        run: $(npm bin)/concurrently --kill-others "node server-1/index.js" "node server-2/index.js" "cd api && npm run CI" --success first
+      - name: test
+        run: |
+          if ["$Hello" -eq "bae"]
+          then 
+            echo "Got you secret"
+          fi
       
