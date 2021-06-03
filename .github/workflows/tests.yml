@@ -14,6 +14,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     env: 
       ok: ${{ secrets.HAHA }}
+    if: env.HAHA == "bae"
+    run: echo "hey Anis yess you made it"
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
