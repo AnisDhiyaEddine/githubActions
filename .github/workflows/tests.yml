@@ -1,18 +1,19 @@
-name: Pre-CI
+name: CI
 on:
   push:
     branches:
       - 'master'
   pull_request: {}
-
+  
 jobs:
-  build_test_release:
+  test:
     strategy:
       matrix:
-        node-version: [12, 14, 16]
-        os: ['ubuntu-latest', 'windows-latest']
+        node-version: [16]
+        os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
-
+    env: 
+      Hello: ${{ secrets.HELLO }}
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
@@ -20,6 +21,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
-        run: npm install
+        run: cd api && npm install
       - name: test
-        run: npm run Pre-CI
+        run: cd api && npm run CI

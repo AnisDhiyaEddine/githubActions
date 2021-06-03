@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  },
   "scripts": {
-    "test": "jest --watchAll --detectOpenHandles",
-    "Pre-CI": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "concurrently --kill-others \"node server-1/index.js\" \"node server-2/index.js\""
   },
   "repository": {
     "type": "git",
@@ -18,31 +21,5 @@
     "url": "https://github.com/AnisDhiyaEddine/githubActions/issues"
   },
   "homepage": "https://github.com/AnisDhiyaEddine/githubActions#readme",
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "jest": "^27.0.3",
-    "regenerator-runtime": "^0.13.7"
-  },
-  "jest": {
-    "verbose": true,
-    "setupFilesAfterEnv": [
-      "./test/helpers/setup.js"
-    ],
-    "collectCoverage": true,
-    "moduleFileExtensions": [
-      "js",
-      "mjs"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.mjs$": "babel-jest"
-    }
-  },
-  "engines": {
-    "node": "14.x"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@babel/preset-env": "^7.14.4"
-  }
+  "type": "module"
 }
