@@ -1,8 +1,7 @@
 const axios = require('axios')
 
-test('hello hello', async () => {
+test('test', async () => {
    try {
-       console.log(process.env)
        let response = await axios.get(process.env.SERVER_1);
        expect(response.data).toBe("server-1")
        response = await axios.get(process.env.SERVER_2);
