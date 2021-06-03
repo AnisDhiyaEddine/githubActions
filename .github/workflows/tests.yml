@@ -4,7 +4,7 @@ on:
     branches:
       - 'master'
   pull_request: {}
-
+  
 jobs:
   test:
     strategy:
@@ -29,7 +29,11 @@ jobs:
         run: cd server-2 && npm install 
       - name: env_setup
         env:
-          NODE_ENV: ${{ secrets.NODE_ENV }}
+          QA_ENV_FILE: ${{ secrets.QA_ENV_FILE }}
+          PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
+        run: |
+            [ "$YOUR_ENVIRONMENT" = qa ] && echo $QA_ENV_FILE | base64 --decode > .env
+            [ "$YOUR_ENVIRONMENT" = prod ] && echo $PROD_ENV_FILE | base64 --decode > .env
       - name: launch-servers_test
         run: $(npm bin)/concurrently --kill-others "node server-1/index.js" "node server-2/index.js" "cd api && npm run CI" --success first
       
