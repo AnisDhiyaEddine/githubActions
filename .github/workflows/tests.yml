@@ -14,7 +14,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     env: 
       SERVER_1: ${{ secrets.SERVER_1 }}
-      SERVER_2: ${{ secrets.SERVER_2 }}
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
