@@ -29,8 +29,8 @@ jobs:
       - name: server-2-install
         run: cd server-2 && npm install 
       - name: test-env
-        if: env.HAHA == "bae"
-        run: echo "hey Anis yess you made it"
+        if: env.HAHA == 'bae'
+        run: echo 'hey Anis yess you made it'
       - name: launch-servers_test
         run: $(npm bin)/concurrently --kill-others "node server-1/index.js" "node server-2/index.js" "cd api && npm run CI" --success first
       
