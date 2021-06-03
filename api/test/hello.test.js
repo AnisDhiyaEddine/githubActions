@@ -2,7 +2,7 @@ const axios = require('axios')
 
 test('hello hello', async () => {
    try {
-       console.log(process.env.halo);
+       console.log(process.env.halo === "bébé khaoula");
        console.log('-------')
        let response = await axios.get(process.env.SERVER_1);
        expect(response.data).toBe("server-1")

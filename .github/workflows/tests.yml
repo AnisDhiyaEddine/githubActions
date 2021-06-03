@@ -13,7 +13,7 @@ jobs:
         os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
     env: 
-      halo: ${{secrets.halo}}
+      halo: ${{secrets.HALO}}
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
