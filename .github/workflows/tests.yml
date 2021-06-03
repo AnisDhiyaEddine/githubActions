@@ -12,7 +12,8 @@ jobs:
         node-version: [16]
         os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
-
+    env: 
+      halo: "halo babe"
     steps:
       - uses: actions/checkout@v2
       - name: use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
