@@ -21,6 +21,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install
-        run: npm install
+        run: cd api && npm install
       - name: test
-        run: npm run CI
+        run: cd api && npm run CI
